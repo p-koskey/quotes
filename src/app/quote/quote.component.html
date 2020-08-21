@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Quotes</h1>
+    <hr>
+    <div class="row">
+    <div class="col-md-8">
+    <div *ngFor = 'let quote of quotes; let i = index'>
+        <h4>{{quote.name}} {{quote.quote}} {{quote.author}}</h4>
+        <button (click)='upvote(i)' class="btn btn-outline-success" style="margin: 5px">Upvote</button>
+        
+        <button (click)='downvote(i)' class="btn btn-outline-danger" style="margin: 5px">Downvote</button>
+    </div>
+    </div>
+    </div>
+</div>
