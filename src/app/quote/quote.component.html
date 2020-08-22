@@ -1,14 +1,29 @@
 <div class="container">
-    <h1>Quotes</h1>
+    <h1 class="text-center">Quotes</h1>
     <hr>
     <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6 float-left">
     <div *ngFor = 'let quote of quotes; let i = index'>
-        <h4>{{quote.name}} {{quote.quote}} {{quote.author}}</h4>
-        <button (click)='upvote(i)' class="btn btn-outline-success" style="margin: 5px">Upvote</button>
         
-        <button (click)='downvote(i)' class="btn btn-outline-danger" style="margin: 5px">Downvote</button>
+        <blockquote class="blockquote">
+            <h4>{{quote.quote}} <br></h4>
+            <app-quote-details [quote]='quote'></app-quote-details>
+        </blockquote>
+        
+        <h6>Submitted by : {{quote.name}}</h6>
+        <div class="float-right">Votes : {{numberOfLikes}}</div>
+        
+        <div class="btn-group-sm ">
+            <button (click)='upvote()' class="btn btn-outline-success" style="margin: 5px">Upvote</button>
+            <button (click)='downvote()' class="btn btn-outline-danger" style="margin: 5px">Downvote</button>
+            
+        </div>
+        
+        <hr>
     </div>
     </div>
+    <div class="col-md-6 float-right center">
+        <app-quote-form></app-quote-form>
+      </div>
     </div>
 </div>

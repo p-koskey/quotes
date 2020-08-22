@@ -7,23 +7,23 @@ import {Quote} from '../quote'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
- 
+  numberOfLikes : number =0 ;
   quotes:Quote[]=[
     
     new Quote('Kimani', 'If you dont have time to read, you dont have the time (or the tools) to write. Simple as that.',
     'Stephen King',0),
-    new Quote('Steph', 'To survive, you must tell stories.','Stephen King',0),
+    new Quote('Steph', 'To survive, you must tell stories.','Umberto Eco',0),
     new Quote('Leo', 'If you dont have time to read, you dont have the time (or the tools) to write. Simple as that.','Umberto Eco',0),
     new Quote('Tania', 'Words are a lens to focus ones mind.','Ayn Rand',0),
 
   ]
 
-  upvote(index){
-    this.quotes[index].numberOfLikes++
+  upvote(){
+    this.numberOfLikes++
   }
 
-  downvote(index){
-    this.quotes[index].numberOfLikes--
+  downvote(){
+    this.numberOfLikes--
   }
   constructor() { }
 
