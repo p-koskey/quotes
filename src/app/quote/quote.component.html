@@ -2,7 +2,10 @@
     <h1 class="text-center">Quotes</h1>
     <hr>
     <div class="row">
-    <div class="col-md-6 pr-5">
+     <div class="col-md-6" style="border-right: 1px solid #ccc">
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+          </div>
+    <div class="col-md-6 pl-5">
     <div *ngFor = 'let quote of quotes; let i = index'>
         
         <blockquote class="blockquote">
@@ -12,8 +15,6 @@
         <hr>
     </div>
     </div>
-    <div class="col-md-6" style="border-left: 1px solid #ccc">
-        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-      </div>
+    
     </div>
 </div>
