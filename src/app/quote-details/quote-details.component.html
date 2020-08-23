@@ -1,3 +1,12 @@
 <h4>
     <footer class="blockquote-footer">{{quote.author}}</footer>
 </h4>
+<div class="text-right">
+    <h6 >Posted on: {{quote.postDate|date}}, {{quote.postDate|dateCount}} days ago</h6>
+    <h6>Submitted by : {{quote.name}}</h6>
+</div>
+<div class="btn-group-sm">
+    <button (click)='upvote()' class="btn btn-outline-success ">Likes: {{numberOfLikes}}</button>
+    <button (click)='downvote()' class="btn btn-outline-danger ml-3">Dislikes {{numberOfDislikes}}</button>
+    <button (click)='deleteQuote(true)' class="btn btn-danger float-right" >Delete</button>
+</div>

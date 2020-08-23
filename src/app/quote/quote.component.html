@@ -2,28 +2,18 @@
     <h1 class="text-center">Quotes</h1>
     <hr>
     <div class="row">
-    <div class="col-md-6 float-left">
+    <div class="col-md-6 pr-5">
     <div *ngFor = 'let quote of quotes; let i = index'>
         
         <blockquote class="blockquote">
             <h4>{{quote.quote}} <br></h4>
-            <app-quote-details [quote]='quote'></app-quote-details>
-        </blockquote>
-        
-        <h6>Submitted by : {{quote.name}}</h6>
-        <div class="float-right">Votes : {{numberOfLikes}}</div>
-        
-        <div class="btn-group-sm ">
-            <button (click)='upvote()' class="btn btn-outline-success" style="margin: 5px">Upvote</button>
-            <button (click)='downvote()' class="btn btn-outline-danger" style="margin: 5px">Downvote</button>
-            
-        </div>
-        
+            <app-quote-details [quote]='quote' (toDelete) = 'deleteQuote($event,i)'></app-quote-details>
+        </blockquote>        
         <hr>
     </div>
     </div>
-    <div class="col-md-6 float-right center">
-        <app-quote-form></app-quote-form>
+    <div class="col-md-6" style="border-left: 1px solid #ccc">
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
       </div>
     </div>
 </div>

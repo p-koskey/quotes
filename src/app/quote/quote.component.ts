@@ -7,23 +7,31 @@ import {Quote} from '../quote'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  numberOfLikes : number =0 ;
+ 
   quotes:Quote[]=[
     
     new Quote('Kimani', 'If you dont have time to read, you dont have the time (or the tools) to write. Simple as that.',
-    'Stephen King',0),
-    new Quote('Steph', 'To survive, you must tell stories.','Umberto Eco',0),
-    new Quote('Leo', 'If you dont have time to read, you dont have the time (or the tools) to write. Simple as that.','Umberto Eco',0),
-    new Quote('Tania', 'Words are a lens to focus ones mind.','Ayn Rand',0),
+    'Stephen King',new Date(2020,3,14)),
+    new Quote('Steph', 'To survive, you must tell stories.','Umberto Eco',new Date(2019,1,14)),
+    new Quote('Leo', 'If you dont have time to read, you dont have the time (or the tools) to write. Simple as that.','Umberto Eco',new Date(2014,12,1)),
+    new Quote(
+      'Tania', 'Words are a lens to focus ones mind.','Ayn Rand',new Date(2020,5,6)),
 
   ]
 
-  upvote(){
-    this.numberOfLikes++
+  deleteQuote(toDelete, index){
+    if (toDelete) {
+      let okDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
+
+      if (okDelete){
+        this.quotes.splice(index,1)
+      }
+    }
   }
 
-  downvote(){
-    this.numberOfLikes--
+  addNewQuote(quote){
+    quote.postDate = new Date(quote.postDate)
+    this.quotes.push(quote)
   }
   constructor() { }
 
