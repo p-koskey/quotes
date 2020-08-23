@@ -1,21 +1,22 @@
-<div class="container-fluid" >
-    <h1 class="text-center">Quotes</h1>
+
+<div class="container-fluid p-3">
+    <h1 class="text-center text-white">Quotes</h1>
     <hr>
     <div class="row">
-     <div class="col-md-3 borde">
+     <div class="col-md-3 ">
             <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
         <div class="col-md-9">
         <div class="d-flex flex-row flex-wrap justify-content-around" >
-        <div *ngFor = 'let quote of quotes; let i = index' class="card m-3" style="width:24rem">
+        <div *ngFor = 'let quote of quotes; let i = index' class="card m-3 shadow-lg p-3 rounded"
+         style="width:25rem; background:rgba(255, 255, 255, 0.8); ">
        
-        <div class="card-body ">
+        <div class="card-body">
         <blockquote class="blockquote">
-            <h4>{{quote.quote}} <br></h4>
-            <app-quote-details [quote]='quote' (toDelete) = 'deleteQuote($event,i)'></app-quote-details>
+            <h5>{{quote.quote}} <br></h5>
         </blockquote>  
-        
     </div>
+        <app-quote-details [quote]='quote' (toDelete) = 'deleteQuote($event,i)'></app-quote-details>    
     </div>
     </div>
 </div>

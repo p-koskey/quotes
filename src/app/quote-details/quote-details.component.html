@@ -1,12 +1,12 @@
 <h4>
-    <footer class="blockquote-footer">{{quote.author}}</footer>
+    <div class="blockquote-footer ml-2">{{quote.author}}</div>
 </h4>
-<div class="text-right">
+<div class="text-right mr-2">
     <h6 >Posted on: {{quote.postDate|date}}, {{quote.postDate|dateCount}} days ago</h6>
     <h6>Submitted by : {{quote.name}}</h6>
 </div>
-<div class="btn-group-sm">
-    <button (click)='upvote()' class="btn btn-outline-success ">Likes: {{numberOfLikes}}</button>
-    <button (click)='downvote()' class="btn btn-outline-danger ml-3">Dislikes: {{numberOfDislikes}}</button>
-    <button (click)='deleteQuote(true)' class="btn btn-danger float-right" >Delete</button>
+<div class="card-footer text-center align-self-end">
+    <button (click)='upvote()' class="btn btn-sm btn-success ">Like: {{numberOfLikes}}</button>
+    <button (click)='downvote()' class="btn btn-sm btn-danger ml-2">Dislike: {{numberOfDislikes}}</button>
+    <button (click)='deleteQuote(true)' class="btn btn-sm btn-dark float-right" >Delete</button>
 </div>

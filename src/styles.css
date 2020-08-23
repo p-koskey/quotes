@@ -1,1 +1,6 @@
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body{
+        background-image: url(/assets/bcg.jpg); 
+        background:no-repeat cover; 
+}
