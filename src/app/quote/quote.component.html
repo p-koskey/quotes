@@ -1,20 +1,23 @@
-<div class="container">
+<div class="container-fluid" >
     <h1 class="text-center">Quotes</h1>
     <hr>
     <div class="row">
-     <div class="col-md-6" style="border-right: 1px solid #ccc">
+     <div class="col-md-3 borde">
             <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-          </div>
-    <div class="col-md-6 pl-5">
-    <div *ngFor = 'let quote of quotes; let i = index'>
-        
+    </div>
+        <div class="col-md-9">
+        <div class="d-flex flex-row flex-wrap justify-content-around" >
+        <div *ngFor = 'let quote of quotes; let i = index' class="card m-3" style="width:24rem">
+       
+        <div class="card-body ">
         <blockquote class="blockquote">
             <h4>{{quote.quote}} <br></h4>
             <app-quote-details [quote]='quote' (toDelete) = 'deleteQuote($event,i)'></app-quote-details>
-        </blockquote>        
-        <hr>
+        </blockquote>  
+        
     </div>
     </div>
-    
+    </div>
+</div>
     </div>
 </div>
