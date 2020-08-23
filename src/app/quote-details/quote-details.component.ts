@@ -7,25 +7,12 @@ import {Quote} from '../quote';
   styleUrls: ['./quote-details.component.css']
 })
 export class QuoteDetailsComponent implements OnInit {
-  numberOfLikes : number =0 ;
-  numberOfDislikes : number =0 ;
+    
   @Input() quote: Quote;
-  @Output() toDelete = new EventEmitter <boolean>();
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }
-
-  upvote(){
-    this.numberOfLikes++
-  }
-
-  downvote(){
-    this.numberOfDislikes++
-  }
-
-  deleteQuote(trash:boolean){
-    this.toDelete.emit(trash);
-  }
-
 }

@@ -7,7 +7,7 @@ import {Quote} from '../quote'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
- 
+
   quotes:Quote[]=[
     
     new Quote('Kimani', 'If you dont have time to read, you dont have the time (or the tools) to write. Simple as that.',
@@ -29,11 +29,15 @@ export class QuoteComponent implements OnInit {
       }
     }
   }
+  liked(upvote, index){
+    this.quotes[index].noLikes++
+  }
 
   addNewQuote(quote){
     quote.postDate = new Date(quote.postDate)
     this.quotes.push(quote)
   }
+  
   constructor() { }
 
   ngOnInit(): void {

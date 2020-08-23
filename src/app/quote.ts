@@ -1,5 +1,6 @@
 export class Quote {
-    numberOfLikes : number = 0;
+    noLikes : number = 0;
+    noDislikes : number = 0;
     constructor(public name:string, public quote:string, public author: string,  public postDate: Date){
 
     }

@@ -16,7 +16,13 @@
             <h5>{{quote.quote}} <br></h5>
         </blockquote>  
     </div>
-        <app-quote-details [quote]='quote' (toDelete) = 'deleteQuote($event,i)'></app-quote-details>    
+        <app-quote-details [quote]='quote'></app-quote-details> 
+        <div class="card-footer text-center">
+            <button (click)='liked(0)' class="btn btn-sm btn-success ">Like: </button>
+            <button  class="btn btn-sm btn-danger ml-2">Dislike: </button>
+            <button (click)='deleteQuote(true)' class="btn btn-sm btn-dark float-right" >Delete</button>
+        </div>
+           
     </div>
     </div>
 </div>
