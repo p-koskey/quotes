@@ -4,3 +4,8 @@ html, body{
         background-image: url(/assets/bcg.jpg); 
         background:no-repeat cover; 
 }
+
+.card{
+        width:25rem; 
+        background:rgba(255, 255, 255, 0.7);
+}

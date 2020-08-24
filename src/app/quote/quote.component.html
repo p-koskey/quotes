@@ -8,9 +8,7 @@
     </div>
         <div class="col-md-9">
         <div class="d-flex flex-row flex-wrap justify-content-around" >
-        <div *ngFor = 'let quote of quotes; let i = index' class="card m-3 shadow-lg p-3 rounded"
-         style="width:25rem; background:rgba(255, 255, 255, 0.8); ">
-       
+        <div *ngFor = 'let quote of quotes; let i = index' class="card m-3 shadow-lg p-3 rounded">       
         <div class="card-body">
         <blockquote class="blockquote">
             <h5 *ngIf="highestVotes()!==quote.likes|| quote.likes===0">{{quote.quote}}</h5>
