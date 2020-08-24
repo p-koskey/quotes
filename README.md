@@ -1,27 +1,23 @@
-# Quotes
+# QUOTES
+This is an angular application that displays, adds and deletes quotes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+## Introduction
+This is an angular application that displays quotes which can be upvoted (liked) and downvoted(disliked) by a user. The user can also add a quote which includes details such as author of the quote, date submitted, name of the user which is then displayed after submitting.
 
-## Development server
+## Live Demo
+Link : [Quotes-app](https://p-koskey.github.io/quotes/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Technologies used
+This project was generated with Angular CLI version 10.0.6.
 
-## Code scaffolding
+## Setup and Installation
+- Clone or download and unzip the repository from github, https://github.com/p-koskey/quotes.
+- Run ng serve from your terminal. 
+- Navigate to http://localhost:4200/.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Author
+[Koskey Patience](https://github.com/p-koskey)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+This project is licensed under the MIT License. 
+Copyright(2020) Patience Koskey
