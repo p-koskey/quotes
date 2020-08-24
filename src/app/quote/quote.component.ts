@@ -7,7 +7,8 @@ import {Quote} from '../quote'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  
+  count:number;
+  largest:number;
   quotes:Quote[]=[
     
     new Quote('Kimani', 'If you dont have time to read, you dont have the time (or the tools) to write. Simple as that.',
@@ -42,18 +43,20 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote)
   }
   
-  largest :number = 0;
-  i:number;
-  num:number=0;
-  
-  highestUpvote(){
-  for(this.i=0; this.i < this.quotes.length; this.i++){
-    this.largest =  this.quotes[this.i].likes
-      if (this.num > this.largest ){
-        this.largest = this.num;
-      }
-      return this.largest;
-  }
+ 
+  highestVotes(){
+    
+    this.largest = 0;
+   
+    for(this.count=0; this.count < this.quotes.length; this.count++){
+
+        if (this.largest < this.quotes[this.count].likes){
+          this.largest = this.quotes[this.count].likes
+        }
+                
+    }
+    return this.largest
+    
 }
   
 

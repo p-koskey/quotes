@@ -13,15 +13,15 @@
        
         <div class="card-body">
         <blockquote class="blockquote">
-            <h5 appHighlight *ngIf="highestUpvote()===quote.likes && quote.likes>0">{{quote.quote}}</h5>
-            <h5 *ngIf="highestUpvote()!==quote.likes|| quote.likes===0">{{quote.quote}}</h5>
+            <h5 *ngIf="highestVotes()!==quote.likes|| quote.likes===0">{{quote.quote}}</h5>
+            <h5 appHighlight *ngIf="highestVotes()===quote.likes && quote.likes>0">{{quote.quote}}</h5>
         </blockquote>  
     </div>
         <app-quote-details [quote]='quote'></app-quote-details> 
         <div class="card-footer text-center">
             <button (click)='liked(i)' class="btn btn-sm btn-success ">Like:{{quote.likes}} </button>
             <button  (click)='disliked(i)'class="btn btn-sm btn-danger ml-2">Dislike:{{quote.dislikes}} </button>
-            <button (click)='deleteQuote(true)' class="btn btn-sm btn-dark float-right" >Delete</button>
+            <button (click)='deleteQuote(i)' class="btn btn-sm btn-dark float-right" >Delete</button>
         </div>
            
     </div>
