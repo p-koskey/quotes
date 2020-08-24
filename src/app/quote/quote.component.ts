@@ -7,7 +7,7 @@ import {Quote} from '../quote'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-
+  
   quotes:Quote[]=[
     
     new Quote('Kimani', 'If you dont have time to read, you dont have the time (or the tools) to write. Simple as that.',
@@ -29,8 +29,12 @@ export class QuoteComponent implements OnInit {
       }
     }
   }
-  liked(upvote, index){
-    this.quotes[index].noLikes++
+  liked(index){
+    this.quotes[index].likes++
+  }
+
+  disliked(index){
+    this.quotes[index].dislikes++
   }
 
   addNewQuote(quote){
@@ -38,6 +42,21 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote)
   }
   
+  largest :number = 0;
+  i:number;
+  num:number=0;
+  
+  highestUpvote(){
+  for(this.i=0; this.i < this.quotes.length; this.i++){
+    this.largest =  this.quotes[this.i].likes
+      if (this.num > this.largest ){
+        this.largest = this.num;
+      }
+      return this.largest;
+  }
+}
+  
+
   constructor() { }
 
   ngOnInit(): void {
