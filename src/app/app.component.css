@@ -1,0 +1,9 @@
+html, body{
+    background-image: url(/assests/image.jpg); 
+    background:no-repeat cover; 
+}
+
+.card{
+    width:25rem; 
+    background:rgba(255, 255, 255, 0.7);
+}
